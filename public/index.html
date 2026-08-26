@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Posture Check — Workout Form Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">●</span>
+      <h1>POSTURE&nbsp;CHECK</h1>
+    </div>
+    <div class="exercise-select">
+      <label for="exercise">EXERCISE</label>
+      <select id="exercise">
+        <option value="squat">Squat</option>
+        <option value="pushup">Push-up</option>
+        <option value="bicepcurl">Bicep Curl</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="stage">
+
+    <section class="camera-panel">
+      <div class="video-wrap" id="videoWrap">
+        <video id="webcam" autoplay playsinline muted></video>
+        <canvas id="overlay"></canvas>
+        <div class="cue-banner" id="cueBanner">
+          <span id="cueText">Press start to begin</span>
+        </div>
+        <div class="boot-overlay" id="bootOverlay">
+          <p>Loading pose model…</p>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="startBtn" class="btn btn-primary">Start session</button>
+        <button id="stopBtn" class="btn btn-ghost" disabled>End session</button>
+      </div>
+    </section>
+
+    <aside class="scoreboard" aria-label="Live stats">
+      <div class="score-block reps">
+        <span class="score-label">REPS</span>
+        <span class="score-value" id="repCount">0</span>
+      </div>
+
+      <div class="score-row">
+        <div class="score-block small good">
+          <span class="score-label">GOOD FORM</span>
+          <span class="score-value" id="goodCount">0</span>
+        </div>
+        <div class="score-block small bad">
+          <span class="score-label">NEEDS WORK</span>
+          <span class="score-value" id="badCount">0</span>
+        </div>
+      </div>
+
+      <div class="score-block angle">
+        <span class="score-label" id="angleLabel">KNEE ANGLE</span>
+        <span class="score-value" id="angleValue">–</span>
+      </div>
+
+      <div class="score-block timer">
+        <span class="score-label">TIME</span>
+        <span class="score-value" id="timerValue">00:00</span>
+      </div>
+
+      <div class="feedback-log">
+        <span class="score-label">FORM NOTES</span>
+        <ul id="feedbackList"></ul>
+      </div>
+
+      <div class="history-block">
+        <span class="score-label">SESSION HISTORY</span>
+        <ul id="historyList"><li class="muted">No sessions saved yet</li></ul>
+      </div>
+    </aside>
+
+  </main>
+   <footer class="site-footer">
+    <p>Built by Pranjal Dewangan</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
