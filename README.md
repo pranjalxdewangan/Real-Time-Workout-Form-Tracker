@@ -119,11 +119,11 @@ what counts as correct form for each exercise.
 
 ```
 posture-app/
-  server.js              Express server and sessions API
-  package.json
-  sessions.json           created automatically on first saved session
-  public/
-    index.html            page structure
-    style.css              visual styling
-    script.js               webcam capture, pose detection, rep and form logic
+├── server.js         Express server and sessions API
+├── package.json      npm dependencies and scripts
+├── sessions.json     created automatically on first saved session
+└── public/
+    ├── index.html    page structure
+    ├── style.css     visual styling
+    └── script.js     webcam capture, pose detection, rep and form logic
 ```
